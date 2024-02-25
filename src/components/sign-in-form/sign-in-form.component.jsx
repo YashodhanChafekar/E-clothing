@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 
 import FormInput from '../form-input/form-input.component';
-import Button from '../button/button.component';
+import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
 
 import {
   signInAuthUserWithEmailAndPassword,
@@ -61,8 +61,8 @@ const SignInForm = () => {
                 <FormInput label="Password" type="password"  required onChange={onChangeHandler} name="password" value={password}/>
                 
                 <div className="buttons-container" >
-                    <Button buttonType="sign-in" type="submit">Sign In</Button>
-                    <Button buttonType="google" type="button" onClick={signInWithGoogle}>Google</Button>
+                    <Button buttonType={BUTTON_TYPE_CLASSES.base} type="submit">Sign In</Button>
+                    <Button buttonType={BUTTON_TYPE_CLASSES.google} type="button" onClick={signInWithGoogle}>Google</Button>
                 </div>
 
             </form>
